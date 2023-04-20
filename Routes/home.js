@@ -4,7 +4,7 @@ const homeRoutes = express.Router();
 const { verifyToken } = require('../authentications/authentication');
 
 homeRoutes.get('/', (req, res, next) => {
-    res.redirect('/home');
+    res.redirect('/auth/login');
 })
 homeRoutes.get("/home", home.homepage);
 homeRoutes.get("/fourLatestNews", home.fourLatestNews);
