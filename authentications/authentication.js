@@ -54,7 +54,6 @@ const verifyToken = async(req, res, next) => {
     }
 }
 const verifyAdmin = async(req, res, next) => {
-    
     const token = req.headers.authorization.split(" ")[1];
     if (token) {
         await jwt.verify(
@@ -73,6 +72,7 @@ const verifyAdmin = async(req, res, next) => {
                         status: "User Not Found",
                     });
                 }
+                console.log(user);
                 if (user.role === "Admin") {
                     next();
                 } else {
