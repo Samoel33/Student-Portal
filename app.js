@@ -24,7 +24,7 @@ app.use(morgan('dev'))
 app.use(cookieParser())
 
 
-app.use('/api/', home);
+app.use('/', home);
 app.use('/api/schoolPortal/auth', authorize);
 app.use("/api/admin", adminViews);
 app.use('/api/student', studentViews);
