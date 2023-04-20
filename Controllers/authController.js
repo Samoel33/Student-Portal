@@ -79,8 +79,9 @@ module.exports.login = async(req, res, next) => {
                 status:'Fail',
                 message:"Email or Password Incorrect"
                 })
+                }else{
+                    createSendToken(admin,200,req,res);
                 }
-                createSendToken(admin,200,req,res);
         }else{
             const student = await Students.findOne({studentNumber:studentNumber});
             if(!student || await !(bcrypt.compare(password,student.password))){
