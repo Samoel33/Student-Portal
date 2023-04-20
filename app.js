@@ -16,7 +16,7 @@ const port = process.env.PORT || 3004;
 const dbURL = process.env.MONGODB_URL
 
 app.use(express.static(path.join(__dirname,'public')));
-
+mongoose.set("strictQuery", true);
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
