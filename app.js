@@ -28,7 +28,7 @@ app.use('/', home);
 app.use('/api/schoolPortal/auth', authorize);
 app.use("/api/admin", adminViews);
 app.use('/api/student', studentViews);
-app.get("**", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "Public/index.html"));
 });
 app.all("*", (req, res, next) => {
